@@ -1,0 +1,80 @@
+/**
+* Здесь содержатся стили для верстки списка товаров с CSS Flexbox
+*/
+
+.products-container {
+    border: 1px solid lightblue;
+    box-shadow: 5px 5px 15px lightblue;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+
+    /* Говорим, что наш контейнер является grid-ом. */
+    display: grid;
+    /* Говорим что промежуток между ячейками сетки - 10 пикселей (по горизонтали и по вертикали) */
+    gap: 10px;
+    /* Задаем "разметку" таблицы: что у нас сетка из 4 столбцов. Кол-во строк мы не знаем (и не надо).
+    * Здесь мы говорим что у нас 4 столбца, одинаковой ширины.
+    * Это эквивалентно grid-template-columns: 1fr 1fr 1fr 1fr;
+    */
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.product-card {
+    padding: 10px;
+    box-shadow: 2px 2px 15px lightblue;
+    border-radius: 10px;
+}
+
+
+.product-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #0096CD;
+}
+
+.product-category {
+    font-size: 14px;
+    color: #0074CE;
+}
+
+.product-price {
+    font-size: 14px;
+    color: lightskyblue;
+}
+
+.discounted {
+    font-size: 16px;
+    font-weight: bold;
+    color: #33CF33;
+}
+
+/* Блок адаптивности. У нас верстка screen-first, то есть по умолчанию - стили для самых больших
+* экранов, а медиа-запросы - под меньшие */
+
+/* для планшетов (до десктопов) */
+@media (max-width: 700px) {
+    .products-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* для больших смартфонов */
+@media (max-width: 520px) {
+    .products-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* для смартфонов */
+@media (max-width: 375px) {
+    .products-container {
+        grid-template-columns: 1fr;
+    }
+}

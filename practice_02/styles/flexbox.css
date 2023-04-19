@@ -1,0 +1,91 @@
+/**
+* Здесь содержатся стили для верстки списка товаров с CSS Flexbox
+*/
+
+.products-container {
+    border: 1px solid lightblue;
+    box-shadow: 5px 5px 15px lightblue;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+
+    /* Говорим, что наш контейнер является flexbox-ом. По умолчанию - горизонтальный */
+    display: flex;
+    /* Говорим что промежуток между "детьми" в контейнере - 10 пикселей */
+    gap: 10px;
+    /* Это свойство говорит контейнеру, что если "дети" (наши товары) не помещаются, то
+    * можно переносить на другую строку */
+    flex-wrap: wrap;
+    /* Здесь мы говорим контейнеру, как выравнивать "детей" по основной оси. */
+    justify-content: flex-start;
+}
+
+.product-card {
+    /* Основная магия здесь. Это сокращенная запись 3-х основных свойств, а именно:
+     * - flex-grow: 0; - мы указываем элементу, что он не может растягиваться;
+     * - flex-shrink: 1; - мы указываем элементу, что он может сжиматься, и все эл-ты
+     * будут сжиматься одинаково
+     * - flex-basis: calc(25% - 8px) - мы указываем элементу, что его изначальный размер
+     * нужно вычислить по формуле: 25% от ширины контейнера отнять 8 пикселей.
+     * Почему отнимаем 8: потому что у контейнера gap (промежуток между элементами) - 10.
+     * В строке из 4 элементов у нас 3 промежутка. 3 * 10 = 30. И у нас 4 элемента, т.е
+     * у каждого элемента в строке будет на 30/4 пикселей меньше ширины. Ближайшее целое - 8.
+     */
+    flex: 0 1 calc(25% - 8px);
+    padding: 10px;
+    box-shadow: 2px 2px 15px lightblue;
+    border-radius: 10px;
+}
+
+.product-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #0096CD;
+}
+
+.product-category {
+    font-size: 14px;
+    color: #0074CE;
+}
+
+.product-price {
+    font-size: 14px;
+    color: lightskyblue;
+}
+
+.discounted {
+    font-size: 16px;
+    font-weight: bold;
+    color: #33CF33;
+}
+
+
+/* Блок адаптивности. У нас верстка screen-first, то есть по умолчанию - стили для самых больших
+* экранов, а медиа-запросы - под меньшие */
+
+/* для планшетов (до десктопов) */
+@media (max-width: 700px) {
+    .product-card {
+        flex: 0 1 calc(33% - 7px);
+    }
+}
+
+/* для больших смартфонов */
+@media (max-width: 520px) {
+    .product-card {
+        flex: 0 1 calc(50% - 10px);
+    }
+}
+
+/* для смартфонов */
+@media (max-width: 375px) {
+    .product-card {
+        flex: 0 1 100%;
+    }
+}
