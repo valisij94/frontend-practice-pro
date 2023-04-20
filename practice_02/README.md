@@ -26,3 +26,7 @@
   - work.css - заготовка, в которой предстоит работать
 
 По умолчанию, в index.html подключен файл work.css.
+
+### Полезные ссылки по занятию:
+Подробный гайд по [FlexBox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) - англ.
+Подробный гайд по [Grid](https://css-tricks.com/snippets/css/complete-guide-grid/) - англ.
