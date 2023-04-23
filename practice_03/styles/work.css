@@ -1,0 +1,94 @@
+/* Здесь будем экспериментировать и писать код. */
+
+
+.products-container {
+    border: 1px solid lightblue;
+    box-shadow: 5px 5px 15px lightblue;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+
+    /* Говорим, что наш контейнер является grid-ом. */
+    display: grid;
+    /* Говорим что промежуток между ячейками сетки - 10 пикселей (по горизонтали и по вертикали) */
+    gap: 15px;
+    /* Задаем "разметку" таблицы: что у нас сетка из 4 столбцов. Кол-во строк мы не знаем (и не надо).
+    * Здесь мы говорим что у нас 4 столбца, одинаковой ширины.
+    * Это эквивалентно grid-template-columns: 1fr 1fr 1fr 1fr;
+    */
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* Стили для "контейнера" карточки товара */
+.product-card {
+    background-color: #FFFFFF;
+    padding: 10px;
+    box-shadow: 2px 2px 15px lightblue;
+    border-radius: 10px;
+}
+
+/* Стили для заголовка в карточке товара (наименование и цена) */
+.product-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Название товара */
+.product-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #0096CD;
+}
+
+/* Категория товара */
+.product-category {
+    font-size: 14px;
+    color: #0074CE;
+}
+
+/* Цена товара */
+.product-price {
+    font-size: 14px;
+    color: lightskyblue;
+}
+
+/* Подсветка, если товар со скидкой */
+.discounted {
+    font-size: 16px;
+    font-weight: bold;
+    color: #33CF33;
+}
+
+/** просто стиль для заголовка */
+h1 {
+    color: #0096CD;
+    margin: 15px auto;
+}
+
+/** Стили для навигации в заголовке */
+.navigation-list {
+    display: flex;
+    list-style: none;
+    cursor: pointer;
+    gap: 60px;
+}
+
+.navigation-item {
+    font-size: 24px;
+    font-weight: 700;
+    color: gray;
+    margin: 8px 0;
+}
+/** Конец стилей навигации в заголовке */
+
+/** Стили для блока приветствия (картинка +  текст) под заголовком */
+.intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    gap: 40px;
+}
+
+/******** ********* ********** ******** Ниже будем писать свои стили ***** ********* ******** */

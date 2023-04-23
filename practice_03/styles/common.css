@@ -1,0 +1,68 @@
+/*
+* Здесь содержатся стили, не имеющие прямого отношения с списку товаров (общие стили)
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@400;700&family=Yellowtail&display=swap');
+
+/**
+* ОЧЕНЬ ВАЖНОЕ ПРАВИЛО!
+*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+    background-color: rgb(235, 243, 246);
+}
+
+/* Применяем это правило для всех картинок: чтобы они не вылезали за границы контейнера */
+img {
+    max-width: 100%;
+}
+
+.card {
+    margin: 15px 10px;
+    padding: 10px;
+    background-color: aliceblue;
+    border: 1px solid #0096CD;
+    box-shadow: 5px 5px 15px lightblue;
+    border-radius: 10px;
+}
+
+.container {
+    /* Это просто для красоты - чтобы на больших экранах не растягивать контент сверх меры*/
+    max-width: 1440px;
+    /* Центрируем контент */
+    margin: 0 auto;
+}
+
+/** Стили для контейнера заголовка */
+.header {
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    box-shadow: 0 0 10px 0 lightblue;
+}
+
+/** Стили для контейнера "Корзина" */
+.cart-container {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #0096CD;
+}
+
+/** Стили для изображения продукта */
+.product-img {
+    width: 100%;
+    /* Это правило нужно использовать осторожно - оно поддерживается не всеми старыми браузерами */
+    aspect-ratio: 1 / 1;
+    margin-bottom: 10px;
+}
