@@ -1,0 +1,76 @@
+.root {
+    margin: 10px;
+}
+
+.products-container {
+    border: 1px solid lightblue;
+    box-shadow: 5px 5px 15px lightblue;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.product-card {
+    padding: 10px;
+    box-shadow: 2px 2px 15px lightblue;
+    border-radius: 10px;
+}
+
+.product-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #0096CD;
+}
+
+.product-category {
+    font-size: 14px;
+    color: #0074CE;
+}
+
+.product-price {
+    font-size: 14px;
+    color: lightskyblue;
+}
+
+.discounted {
+    font-size: 16px;
+    font-weight: bold;
+    color: #33CF33;
+}
+
+/*************************************** Стили для блока "Поиск" *************************************************/
+.search-container {
+    display: flex;
+    gap: 10px;
+}
+
+.search-input {
+    padding: 0.5rem;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.button {
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #0096CD;
+    padding: 0 10px;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+.button:hover {
+    box-shadow: 5px 5px 15px lightblue;
+    background-color: #0074CE;
+}
