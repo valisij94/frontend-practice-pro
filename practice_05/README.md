@@ -47,6 +47,6 @@
    - если указан пустой текст - показываем все товары
 
 ### Полезные ссылки
-- (Что такое колбэк)[https://developer.mozilla.org/ru/docs/Glossary/Callback_function] - пояснение, что такое функция обратного вызова, с примерами. Русскоязычная.
-- (Русскоязычный гайд)[https://learn.javascript.ru/array-methods] по методам массивов (смотреть те методы, которые рассмотрены на занятиях).
-- (Для гурманов)[https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array] спецификация MDN, местами русскоязычная.
+- [Что такое колбэк](https://developer.mozilla.org/ru/docs/Glossary/Callback_function) - пояснение, что такое функция обратного вызова, с примерами. Русскоязычная.
+- [Русскоязычный гайд](https://learn.javascript.ru/array-methods) по методам массивов (смотреть те методы, которые рассмотрены на занятиях).
+- [Для гурманов](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array) спецификация MDN, местами русскоязычная.
