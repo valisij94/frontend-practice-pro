@@ -16,7 +16,7 @@ const gloves = {
 const shoes = {
     name: "Sport shoes",
     category: "Sport",
-    discount: true,
+    discount: 0.1,
     price: 320
 };
 const hammer = {
@@ -27,7 +27,7 @@ const hammer = {
 const saw = {
     name: "Saw",
     category: "Tools",
-    discount: true,
+    discount: 0.15,
     price: 75
 };
 const shark = {
@@ -38,7 +38,7 @@ const shark = {
 const drill = {
     name: "Drill",
     category: "Tools",
-    discount: true,
+    discount: 0.05,
     price: 85
 };
 
