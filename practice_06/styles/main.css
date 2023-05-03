@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 0
+}
+
+h1 {
+    color: #0096CD;
+    text-align: center;
+    margin: 15px auto;
+}
+
+.plan_list {
+    margin-left: 20px;
+}
+
+.card {
+    margin: 15px;
+    padding: 10px;
+    background-color: aliceblue;
+    border: 1px solid #0096CD;
+    box-shadow: 5px 5px 15px lightblue;
+    border-radius: 10px;
+}

@@ -3,6 +3,8 @@
 // Массив чисел (примитивы)
 const numbers = [1,3,6,2,4,0,9,7,5,10,15,12,11];
 
+
+
 const ball = {
     name: "Ball",
     category: "Sport",
@@ -47,6 +49,7 @@ let products = [ball, gloves, shoes, hammer, saw, drill, shark];
 
 // Массив строк
 let stringArray = ['This', 'is', 'an', 'array', 'of', 'strings'];
+
 
 
 
