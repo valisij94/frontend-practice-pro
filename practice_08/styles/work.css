@@ -1,0 +1,60 @@
+.root {
+    margin: 10px;
+}
+
+.input {
+    padding: 10px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    transition: all .5s;
+}
+
+.button {
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #0096CD;
+    padding: 10px;
+    cursor: pointer;
+    transition: all .5s;
+    width: max-content;
+}
+
+.button:hover {
+    box-shadow: 5px 5px 15px lightblue;
+    background-color: #0074CE;
+}
+
+.modal {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-container {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px lightblue;
+    width: 400px;
+    background-color: white;
+    position: relative;
+    top: 10%;
+    left: calc(50% - 200px);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal-content-header {
+    color: #0096CD;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.modal-content-text {
+    font-size: 14px;
+}
