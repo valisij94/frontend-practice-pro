@@ -50,4 +50,4 @@ const shark = {
 };
 
 // Массив объектов
-let products = [ball, gloves, shoes, hammer, saw, shark];
+let products = [ball, shark, gloves, hammer, shoes, saw];
