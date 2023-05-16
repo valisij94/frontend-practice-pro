@@ -33,6 +33,10 @@ h1 {
     border-radius: 10px;
 }
 
+.plan-list {
+    margin-left: 20px;
+}
+
 .container {
     margin: 0 10px;
 }
