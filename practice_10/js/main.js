@@ -1,5 +1,6 @@
+// Просто селектор - под него предстоит добавлять инпут
 const contactUsButton = document.querySelector('#contactUsButton');
-// Задел на задачу №2.
+// Задел на задачу с показом модального окна
 const modalElement = document.querySelector('.modal');
 
 function renderForm() {
