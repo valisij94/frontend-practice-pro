@@ -71,3 +71,10 @@
     padding: 10px;
     box-shadow: 5px 5px 15px lightblue;
 }
+
+.products-container {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
