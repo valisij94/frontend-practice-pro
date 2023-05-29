@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice_11</title>
+
+    <!-- Подключаем стили -->
+    <!-- нормализация (сброс стилей браузера по умолчанию, см. github.com/necolas/normalize.css) -->
+    <link rel="stylesheet" href="./styles/normalize.css" />
+    <!-- "Общие" стили -->
+    <link rel="stylesheet" href="./styles/common.css" />
+    <!-- Стили, которые будем писать -->
+    <link rel="stylesheet" href="./styles/work.css" />
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Практическое занятие №11</h1>
+        <div class="card">
+            <h3>Тема занятия</h3>
+            <p>Работа с DOM. Работа с localStorage</p>
+        </div>
+
+        <div class="card">
+            <h3>План занятия</h3>
+            <ul class="plan-list">
+                <li class="plan-item">Сохранение данных полей формы при обновлении страницы</li>
+                <li class="plan-item">Реализация функциональности корзины интернет-магазина</li>
+            </ul>
+        </div>
+
+        <button class="button" id="contactUsButton">Связаться с нами</button>
+
+        <div id="productsContainer" class="products-container">
+
+        </div>
+
+        <div class="search-container">
+            <input type="text" class="input compact" placeholder="Поиск по имени"/>
+            <fieldset id="searchAmountContainer" class="search-amount-container">
+                <legend>Диапазон цен</legend>
+                <input type="text" class="input compact" placeholder="От" id="amountFrom"/>
+                <input type="text" class="input compact" placeholder="До" id="amountTo"/>
+            </fieldset>
+        </div>
+        <div class="modal">
+            <div class="modal-container">
+                <input class="input" id="lastName" type="text" placeholder="Фамилия"/>
+                <input class="input" id="firstName" type="text" placeholder="Имя"/>
+                <input class="input" id="phone" type="text" placeholder="Телефон"/>
+                <input class="input" id="email" type="text" placeholder="Эл.почта"/>
+                <button id="sendContactsForm" class="button">Отправить</button>
+                <button id="cancelContactsForm" class="button button-cancel">Отмена</button>
+            </div>
+        </div>
+    </div>
+    <script src="./js/main.js"></script>
+</body>
+</html>
