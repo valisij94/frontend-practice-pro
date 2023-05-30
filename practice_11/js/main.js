@@ -9,6 +9,9 @@ const modalContainer = document.querySelector('.modal-container');
 // Обработчики событий кликов по кнопкам
 contactUsButton.addEventListener('click', (event) => {
     modalElement.style.display = 'block';
+    restoreInputsData();
+
+    saveAllInputsData();
 });
 
 modalElement.addEventListener('click', (event) => {
@@ -94,3 +97,62 @@ function renderProduct(product) {
 products.forEach( (product) => {
     renderProduct(product);
 });
+
+const lastNameInput = document.querySelector('#lastName');
+const firstNameInput = document.querySelector('#firstName');
+const phoneInput = document.querySelector('#phone');
+const emailInput = document.querySelector('#email');
+
+const cancelBtn = document.querySelector('#cancelContactsForm');
+const sendBtn = document.querySelector('#sendContactsForm');
+
+// работаем здесь
+function saveInputsData() {
+    const contactsData = {
+        lastName: lastNameInput.value,
+        firstName: firstNameInput.value,
+        phone: phoneInput.value,
+        email: emailInput.value
+    };
+
+    localStorage.setItem('contactsData', JSON.stringify(contactsData));
+}
+
+cancelBtn.addEventListener('click', (event) => {
+    saveInputsData();
+    modalElement.style.display = 'none';
+});
+
+function restoreInputsData() {
+    const stored = localStorage.getItem('contactsData');
+    if (stored) {
+        const parsed = JSON.parse(stored);
+        lastNameInput.value = parsed.lastName;
+        firstNameInput.value = parsed.firstName;
+        phoneInput.value = parsed.phone;
+        emailInput.value = parsed.email;
+    }
+}
+
+function clearInputsData() {
+    localStorage.removeItem('contactsData');
+}
+
+sendBtn.addEventListener('click', (event) => {
+    clearInputsData();
+    modalElement.style.display = 'none';
+})
+
+
+
+function saveAllInputsData() {
+    const inputs = document.querySelectorAll('input');
+
+    const inputsData = {};
+    for (let i = 0; i < inputs.length; i++) {
+        if (inputs[i].id) {
+            inputsData[inputs[i].id] = inputs[i].value;
+        }
+    }
+    localStorage.setItem('inputsData', JSON.stringify(inputsData));
+}
