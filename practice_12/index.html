@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice_11</title>
+
+    <!-- Подключаем стили -->
+    <!-- нормализация (сброс стилей браузера по умолчанию, см. github.com/necolas/normalize.css) -->
+    <link rel="stylesheet" href="./styles/normalize.css" />
+    <!-- "Общие" стили -->
+    <link rel="stylesheet" href="./styles/common.css" />
+    <!-- Стили, которые будем писать -->
+    <link rel="stylesheet" href="./styles/work.css" />
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Практическое занятие №12</h1>
+        <div class="card">
+            <h3>Тема занятия</h3>
+            <p>Работа с Promise API</p>
+        </div>
+
+        <div class="card">
+            <h3>План занятия</h3>
+            <ul class="plan-list">
+                <li class="plan-item">Примеры асинхронных операций</li>
+                <li class="plan-item">Реализация иконки загрузки для списка товаров</li>
+                <li class="plan-item">Реализация загрузки товаров по категориям</li>
+            </ul>
+        </div>
+
+        <select class="input search-input" id="categorySelect">
+            <option selected disabled>Категория</option>
+        </select>
+
+        <div id="productsContainer" class="products-container">
+
+        </div>
+    </div>
+    <script src="./js/main.js"></script>
+</body>
+</html>
