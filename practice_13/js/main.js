@@ -79,7 +79,7 @@ const successResponse = {
                 resolve(fakeProducts);
             }, 1500);
         } )
-    }
+    },
 };
 
 /**
@@ -94,3 +94,23 @@ const faieldResponse = {
 };
 
 //
+function makeRequest() {
+    // сделать fetch запрос по адресу https://fakestoreapi.com/products
+    return fetch('https://fakestoreapi.com/products');
+
+    // return new Promise( (resolve, reject) => {
+    //     setTimeout( () => {
+    //         resolve(successResponse)
+    //     }, 3000 );
+    // } );
+};
+
+makeRequest().
+    then( result => result.json() )
+    .then( res => {
+        // ввыести в консоль суммарную стоимость всех товаров
+        const sum = res.reduce( (acc, val) => acc + val.price, 0);
+        console.log('Total sum:', sum);
+    } )
+    .catch( (error) => console.log(error.message))
+    .finally( () => console.log(`Запрос отправлен: ${Date.now()}`) );
