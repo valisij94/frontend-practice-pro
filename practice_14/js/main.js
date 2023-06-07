@@ -23,6 +23,7 @@ function renderProduct(product) {
 
 // отрендерить список товаров
 function renderProducts( productsArray ) {
+    clearProducts();
     productsArray.forEach( (product) => {
         const productEl = renderProduct(product);
         productsContainerEl.append(productEl);
@@ -36,43 +37,4 @@ function clearProducts() {
     }
 };
 
-// массив с "фейковыми" товарами
-const fakeProducts = [
-    {
-        id: 1,
-        title: 'Hammer',
-        price: '100',
-        category: 'Tools',
-        description: 'Very useful: sometimes can help to convince somebody'
-    },
-    {
-        id: 2,
-        title: 'Saw',
-        price: '200',
-        category: 'Tools',
-        description: 'Also very useful: can separate something'
-    },
-    {
-        id: 3,
-        title: 'Ball',
-        price: '50',
-        category: 'Sport',
-        description: 'Nothing to say here'
-    },
-    {
-        id: 4,
-        title: 'Jeans',
-        price: '150',
-        category: 'Clothing',
-        description: 'Just a jeans'
-    },
-];
-
-
-function requestProducts() {
-    // здесь позже мы будем запрашивать товары с бэка
-    clearProducts();
-    renderProducts(fakeProducts);
-};
-
-requestProducts();
+const loadingEl = document.querySelector('#loadingMessage');

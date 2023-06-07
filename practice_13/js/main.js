@@ -31,7 +31,9 @@ function renderProducts( productsArray ) {
 
 // очистить контейнер товаров
 function clearProducts() {
-    productsContainerEl.childNodes.forEach( child => child.remove() );
+    while (productsContainerEl.firstChild) {
+        productsContainerEl.removeChild(productsContainerEl.firstChild);
+    }
 };
 
 const loadingEl = document.querySelector('#loadingMessage');
