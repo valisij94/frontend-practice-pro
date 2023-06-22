@@ -33,11 +33,3 @@ const orders = {
     'user3': [drill, shovel],
     'user4': [shovel]
 }
-
-const ordersTotal = {};
-
-for (let [key, val] of Object.entries(orders) ) {
-    ordersTotal[key] = val.reduce( (acc,value) => acc + value.price, 0);
-}
-
-console.log(ordersTotal);
