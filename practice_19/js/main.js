@@ -43,17 +43,3 @@ const veryWeirdArray = {
     1: 'Axe',
     2: 'Nails',
 };
-
-function validateInput(errorText) {
-    if (this.required) {
-        if (!this.value) {
-            this.classList.add('error');
-            this.value = errorText;
-        }
-    }
-}
-
-const inputs = document.querySelectorAll('input');
-inputs.forEach( input => {
-    validateInput.call(input, "Fill this immediately!");
-});
