@@ -1,0 +1,56 @@
+.product-card {
+    border: 1px solid blue;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 5px 5px 15px lightblue;
+}
+
+.products-container {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+/* Название товара */
+.product-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #0096CD;
+}
+
+/* Цена товара */
+.product-price {
+    font-size: 16px;
+    font-weight: 700;
+    color: darkgreen;
+}
+
+.input {
+    padding: 0.5rem;
+    border: none;
+    border-bottom: 2px solid lightblue;
+    transition: all .5s;
+}
+
+.input:focus {
+    outline: none;
+    border-bottom-color: #0096CD;
+}
+
+.button {
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #0096CD;
+    padding: 10px;
+    cursor: pointer;
+    transition: all .5s;
+    width: max-content;
+    margin: 10px;
+}
+
+.button:hover {
+    box-shadow: 5px 5px 15px lightblue;
+    background-color: #0074CE;
+}
