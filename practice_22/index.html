@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice_21</title>
+
+    <!-- Подключаем стили -->
+    <!-- нормализация (сброс стилей браузера по умолчанию, см. github.com/necolas/normalize.css) -->
+    <link rel="stylesheet" href="./styles/normalize.css" />
+    <!-- "Общие" стили -->
+    <link rel="stylesheet" href="./styles/common.css" />
+    <!-- Стили, которые будем писать -->
+    <link rel="stylesheet" href="./styles/work.css" />
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Практическое занятие №21</h1>
+        <div class="card">
+            <h3>Тема занятия</h3>
+            <p>Работа с браузерными событиями</p>
+        </div>
+
+        <div class="card">
+            <h3>План занятия</h3>
+            <ul class="plan-list">
+                <li class="plan-item">Браузерные события</li>
+                <li class="plan-item">Обработчики событий</li>
+                <li class="plan-item">Всплытие событий</li>
+            </ul>
+        </div>
+        <form class="form-container" id='testForm' action='https://fakestoreapi.com/products' method='POST'>
+            <input class="input" id="titleInput" name="title" data-required="true" type="text" placeholder="Title"/>
+            <input class="input" id="priceInput" name="price" data-required="true" type="text" placeholder="Price"/>
+            <input class="input" id="descriptionInput" name="description" type="text" placeholder="Description"/>
+            <input class="input" id="categoryInput" name="category" data-required="true" type="text" placeholder="Category"/>
+            <button class="button" type="submit">Send form</button>
+        </form>
+
+    </div>
+    <script src="./js/main.js"></script>
+</body>
+</html>
