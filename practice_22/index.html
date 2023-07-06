@@ -34,7 +34,7 @@
         </div>
         <form class="form-container" id='testForm' action='https://fakestoreapi.com/products' method='POST'>
             <input class="input" id="titleInput" name="title" data-required="true" type="text" placeholder="Title"/>
-            <input class="input" id="priceInput" name="price" data-required="true" type="text" placeholder="Price"/>
+            <input class="input" id="priceInput" data-isnumber="true" name="price" data-required="true" type="text" placeholder="Price"/>
             <input class="input" id="descriptionInput" name="description" type="text" placeholder="Description"/>
             <input class="input" id="categoryInput" name="category" data-required="true" type="text" placeholder="Category"/>
             <button class="button" type="submit">Send form</button>
