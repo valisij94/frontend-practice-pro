@@ -2,11 +2,9 @@
 * Компонент для рендеринга приветствия
 */
 
-import { useState } from "react";
-
 export default function Greeting() {
     let user = {
-        name: 'Vasilij', status: 'active'
+        name: 'Vasya', status: 'active'
     };
 
     return (
