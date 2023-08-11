@@ -6,8 +6,44 @@ export default function LoginForm() {
 
     const [formState, setFormState] = useState({
         login: '',
-        passwd: ''
+        passwd: '',
+        isError: false
     });
+
+    const [formTracker, setFormTracker] = useState({
+        click: 0,
+        focus: 0
+    });
+
+    console.log('Now state is: ', formTracker);
+
+    const focusHandler = () => {
+        setFormTracker( (old) => {
+            return {
+                ...old,
+                focus: old.focus + 1
+            };
+        } );
+     };
+
+    const validateForm = () => {
+        if (!!formState.login && !!formState.passwd) {
+            setFormState( (old) => {
+                return {
+                    ...old,
+                    isError: false
+                }
+            })
+        }
+        else {
+            setFormState( (old) => {
+                return {
+                    ...old,
+                    isError: true
+                }
+            })
+        }
+    };
 
     return (
         <div>
@@ -16,7 +52,7 @@ export default function LoginForm() {
                 type="text"
                 placeholder="Login"
                 value={formState.login}
-
+                onFocus={ focusHandler }
                 onChange={ (event) => { setFormState( (oldState) => {
                     return { ...oldState, login: event.target.value}
                 }) } }
@@ -26,13 +62,29 @@ export default function LoginForm() {
                 type="password"
                 placeholder="Password"
                 value={formState.passwd}
+                onFocus={ focusHandler }
                 onChange={ (event) => {
                     setFormState( (oldState) => {
                         return { ...oldState, passwd: event.target.value }
                     })
                 }}
             />
-            <Button buttonText="Enter" />
+            <Button
+                buttonText="Enter"
+                clickHandler={ () => {
+                    setFormTracker( (old) => {
+                        return {
+                            ...old,
+                            click: old.click + 1
+                        }
+                    });
+                    validateForm();
+                } }
+            />
+            { formState.isError && <p>Fill all fields!</p> }
+
+            { formState.isError ? <p>Fill all fields!</p> : null }
+
             {/* <DummyComponent clicks={clicks} /> */}
         </div>
     )
