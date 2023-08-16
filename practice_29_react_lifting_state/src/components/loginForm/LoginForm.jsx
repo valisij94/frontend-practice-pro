@@ -1,9 +1,8 @@
 import { useState } from "react";
 import Button from "../button/Button";
-import styles from './LoginForm.module.css';
 import Input from "../input/Input";
 
-export default function LoginForm() {
+export default function LoginForm(props) {
 
     const [formState, setFormState] = useState({
         login: '',
@@ -47,6 +46,7 @@ export default function LoginForm() {
     return (
         <div>
             <Input
+                theme={props.theme}
                 type="text"
                 placeholder="Login"
                 value={formState.login}
@@ -56,6 +56,7 @@ export default function LoginForm() {
                 }) } }
             />
             <Input
+                theme={props.theme}
                 type="password"
                 placeholder="Password"
                 value={formState.passwd}
@@ -67,6 +68,7 @@ export default function LoginForm() {
                 }}
             />
             <Button
+                theme={props.theme}
                 buttonText="Enter"
                 clickHandler={ () => {
                     setFormTracker( (old) => {

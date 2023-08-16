@@ -8,7 +8,11 @@ export default function Button( props ) {
     let classNam = props.isDisabled ? s['button-disabled'] : '';
 
     return (
-        <button className={`${s.button} ${classNam}`} onClick={ () => {
+        <button className={`
+                ${s.button}
+                ${classNam}
+                ${props.theme === 'dark' ? s.buttonDark : s.buttonLight}
+            `} onClick={ () => {
                 if (!!props.clickHandler) props.clickHandler();
             }
         }>

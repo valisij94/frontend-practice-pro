@@ -13,12 +13,14 @@ root.render(
 
 function App() {
 
+  const [theme, setTheme] = useState('light');
+
   return (
     <div className="App">
-      <Logo />
-      <Greeting />
-      <ButtonsBlock userData={ {name: 'Vasilij', status: 'active'} }/>
-      <LoginForm />
+      <Logo theme={theme}/>
+      <Greeting theme={theme} />
+      <ButtonsBlock theme={theme} userData={ {name: 'Vasilij', status: 'active'} }/>
+      <LoginForm theme={theme} />
     </div>
   );
 }
