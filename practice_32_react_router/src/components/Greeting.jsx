@@ -15,27 +15,19 @@ export default function Greeting() {
 
     const [time, setTime] = useState(new Date().toLocaleString());
 
-    const [bgColor, setBgColor] = useState('');
-
     useEffect( () => {
 
         const updater = setInterval( () => {
             setTime(new Date().toLocaleString());
         }, 1000);
 
-        const timeout = setTimeout( () => {
-            setBgColor('#0096CD');
-            console.log('Effect')
-        }, 2000);
-
         return () => {
             clearInterval(updater);
-            clearTimeout(timeout);
         }
     }, [] );
 
     return (
-        <div style={{ backgroundColor: bgColor}} >
+        <div>
             <p>Добро пожаловать
                 {
                     (user.status === 'active') ? `, ${user.name}` : ""
