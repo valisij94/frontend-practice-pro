@@ -35,7 +35,7 @@ export default function ProductItem( {product} ) {
             <div className={s.productButtonsContainer}>
                 <Button clickHandler={ () => { setShouldRequest(true); }} classes={s.buttonAdd} buttonText="Add" />
                 <Button classes={s.buttonRemove} buttonText="Remove" />
-                <Link to={`/products/${product.id}`}>Details</Link>
+                <Link to={`/detail/${product.id}`}>Details</Link>
             </div>
         </div>
     );

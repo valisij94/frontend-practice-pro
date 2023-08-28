@@ -28,8 +28,8 @@ function App() {
         <Routes>
           <Route path='/login' element={<LoginForm theme={theme} />} />
           <Route path='/' element={<Greeting theme={theme} />} />
-          <Route path='/products' element={<ProductList />} />
-          <Route path='/products/:id' element={ <ProductDetail /> } />
+          <Route path='/products' element={<ProductList />}/>
+          <Route path='detail/:id' element={ <ProductDetail /> } />
           <Route path='*' element={<p>Sorry, we could not find the page!</p> } />
         </Routes>
       </Router>
