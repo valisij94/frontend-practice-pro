@@ -1,0 +1,16 @@
+.input {
+    padding: 10px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    transition: all .5s;
+}
+
+.inputLight {
+    background-color: antiquewhite;
+    color: black;
+}
+
+.inputDark {
+    background-color: darkslategrey;
+    color: white;
+}

@@ -1,8 +1,13 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Button from "../button/Button";
 import Input from "../input/Input";
+import { ThemeContext, UserContext } from "../../context/context";
 
 export default function LoginForm(props) {
+
+    const { changeTheme } = useContext(ThemeContext);
+
+    const {setUser} = useContext(UserContext);
 
     const [formState, setFormState] = useState({
         login: '',
@@ -12,6 +17,10 @@ export default function LoginForm(props) {
 
     const validateForm = () => {
         if (!!formState.login && !!formState.passwd) {
+            setUser( old => ({
+                ...old,
+                name: formState.login
+            }));
             setFormState( (old) => {
                 return {
                     ...old,
@@ -32,7 +41,6 @@ export default function LoginForm(props) {
     return (
         <div>
             <Input
-                theme={props.theme}
                 type="text"
                 placeholder="Login"
                 value={formState.login}
@@ -41,7 +49,6 @@ export default function LoginForm(props) {
                 }) } }
             />
             <Input
-                theme={props.theme}
                 type="password"
                 placeholder="Password"
                 value={formState.passwd}
@@ -52,11 +59,14 @@ export default function LoginForm(props) {
                 }}
             />
             <Button
-                theme={props.theme}
                 buttonText="Enter"
                 clickHandler={ () => {
                     validateForm();
                 } }
+            />
+            <Button
+                buttonText="Toggle Theme"
+                clickHandler={changeTheme}
             />
             { formState.isError && <p>Fill all fields!</p> }
         </div>

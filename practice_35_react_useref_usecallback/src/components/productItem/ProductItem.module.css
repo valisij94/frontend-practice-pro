@@ -1,0 +1,70 @@
+/*
+товара. У карточки товара есть:
+ - изображение, с классом `productImg`
+ - название, с классом `productName` и цена, с классом `productPrice`. Должно быть в одну линию, название слева а цена справа
+ - описание товара, с классом `productDescription`
+ - кнопки "Добавить", "Убрать" с классами `button addToCartButton`, `button removeFromCartButton`. Кнопки также разместить в одну линию (класс `productButtonsContainer`)
+ */
+
+/* Контейнер карточки товара */
+.productCard {
+    border: 1px solid gray;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px gray;
+    background-color: #FFF;
+    padding: 10px;
+    overflow: hidden;
+}
+
+/* Изображение товара */
+.productImg {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    margin-bottom: 10px;
+}
+
+/* Название и цена товара (контейнер) */
+.productNamePriceContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Название товара */
+.productName {
+    font-size: 18px;
+    color: #0096CD;
+    font-weight: 700;
+}
+
+/* Цена товара */
+.productPrice {
+    font-size: 16px;
+    color: green;
+    font-weight: 700;
+}
+
+/* Описание товара */
+.productDescription {
+    font-size: 14px;
+    color: darkgray;
+}
+
+/* Контейнер с кнопками действий с товарами */
+.productButtonsContainer {
+    display: flex;
+    justify-content: center;
+}
+
+/* Кнопка добавления в корзину */
+.buttonAdd {
+    background-color: green;
+    border-radius: 15px 0 0 15px;
+    margin-right: 0;
+}
+
+/* Кнопка удаления из корзины */
+.buttonRemove {
+    background-color: red;
+    border-radius: 0 15px 15px 0;
+    margin-left: 0;
+}
