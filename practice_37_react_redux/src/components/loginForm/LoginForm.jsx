@@ -2,10 +2,16 @@ import React, { useCallback, useEffect, useRef } from "react";
 import { useState } from "react";
 import Button from "../button/Button";
 import AttemptsList from "./AttemptsList";
+import { useDispatch, useSelector } from "react-redux";
+import { addUserDataAction } from "../../store/actions/userActions";
 
 export default function LoginForm(props) {
 
-    // For the task 6
+    const name = useSelector( state => state.name );
+    const pwd = useSelector( state => state.pwd );
+    console.log('Name from state', name, pwd)
+
+    const dispatch = useDispatch();
 
     const [formState, setFormState] = useState( { login: '', pwd: '' } );
 
@@ -43,8 +49,10 @@ export default function LoginForm(props) {
             <Button
                 buttonText="Enter"
                 clickHandler={ () => {
-                    /* for task 6 */
-                    addAttempt(formState.login, formState.pwd)
+                    // мы хотим сохранить данные пользовтаеля в редакс-стейте
+                    const actionObject = addUserDataAction(formState.login, formState.pwd);
+                    // диспатчим наш экшн - то есть говорим редаксу, что мы хотим обновить стейт
+                    dispatch(actionObject);
                 } }
             />
 

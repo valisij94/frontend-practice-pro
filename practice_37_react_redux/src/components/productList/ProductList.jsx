@@ -4,6 +4,7 @@ import ProductItem from '../productItem/ProductItem';
 import { useEffect, useState } from 'react';
 import { Link, Route, Routes, useParams } from 'react-router-dom';
 
+
 export default function ProductList( ) {
 
     const [products, setProducts] = useState([]);

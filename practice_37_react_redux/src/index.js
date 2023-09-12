@@ -12,6 +12,9 @@ import { ThemeContext, UserContext, initialUserState } from './context/context';
 import Button from './components/button/Button';
 import ContactsForm from './components/contacts/ContactsForm';
 
+import { Provider } from 'react-redux';
+import { store } from './store/store';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <App />
@@ -28,10 +31,7 @@ function App() {
   }
 
   return (
-    <UserContext.Provider value={{
-      user,
-      setUser
-    }}>
+    <Provider store={store}>
       <ThemeContext.Provider value={{
         changeTheme,
         theme}}
@@ -59,6 +59,6 @@ function App() {
           />
         </div>
       </ThemeContext.Provider>
-    </UserContext.Provider>
+    </Provider>
   );
 }
