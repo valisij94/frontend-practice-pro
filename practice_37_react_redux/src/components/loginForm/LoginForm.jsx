@@ -1,15 +1,11 @@
-import React, { useCallback, useEffect, useRef } from "react";
+import React, { useCallback } from "react";
 import { useState } from "react";
 import Button from "../button/Button";
 import AttemptsList from "./AttemptsList";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addUserDataAction } from "../../store/actions/userActions";
 
 export default function LoginForm(props) {
-
-    const name = useSelector( state => state.name );
-    const pwd = useSelector( state => state.pwd );
-    console.log('Name from state', name, pwd)
 
     const dispatch = useDispatch();
 
@@ -27,7 +23,6 @@ export default function LoginForm(props) {
         setAttempts( old => [...old, attempt] );
     }
 
-    console.log('Redner login form')
     return (
         <div>
             <input
