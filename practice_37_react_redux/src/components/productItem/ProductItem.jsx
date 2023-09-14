@@ -5,23 +5,12 @@ import { useState, useEffect } from 'react';
 import Button from '../button/Button';
 import s from './ProductItem.module.css';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addToCartAction, removeFromCartAction } from '../../store/actions/cartActions';
 
 export default function ProductItem( {product} ) {
 
-    const [shouldRequest, setShouldRequest] = useState(false);
-
-    useEffect( () => {
-        if (shouldRequest) {
-            fetch(`https://fakestoreapi.com/products/${product.id}`)
-                .then(resp => resp.json())
-                .then(data => {
-                    console.log(data);
-                })
-                .finally( () => {
-                    setShouldRequest(false);
-                });
-        }
-    }, [shouldRequest]);
+    const dispatch = useDispatch();
 
     // product.id
     return (
@@ -33,8 +22,13 @@ export default function ProductItem( {product} ) {
             </div>
             <p className={product.description}>{product.description}</p>
             <div className={s.productButtonsContainer}>
-                <Button clickHandler={ () => { setShouldRequest(true); }} classes={s.buttonAdd} buttonText="Add" />
-                <Button classes={s.buttonRemove} buttonText="Remove" />
+                <Button clickHandler={ () => {
+                        dispatch(addToCartAction(product.id));
+                    }} classes={s.buttonAdd} buttonText="Add" />
+                <Button clickHandler={ () => {
+                    dispatch(removeFromCartAction(product.id));
+                } }
+                classes={s.buttonRemove} buttonText="Remove" />
                 <Link to={`/detail/${product.id}`}>Details</Link>
             </div>
         </div>

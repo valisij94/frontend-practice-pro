@@ -1,36 +1,16 @@
-import {createStore} from 'redux';
-import { userActionTypes } from './actions/userActions';
+import {combineReducers, createStore} from 'redux';
+import { userReducer } from './reducers/UserReducer';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import { cartReducer } from './reducers/CartReducer';
 
-const initialAppState = {
-    name: 'Vasya',
-    pwd: '',
-};
-
-/*
- action = {
-    type: 'addUserData',
-    value: {
-        name: 'Vasilij',
-        pwd: 'TopSikret!'
-    }
- }
-*/
 /**
- *
- * @param {*} store
- * @param {*} action
- * @returns
+ * state = {
+ *  userData: { // User Data }
+ *  cartData: { // Cart Data }
+ * }
  */
-const userReducer = (store = initialAppState, action) => {
-    switch (action.type) {
-        case userActionTypes.ADD_USER_DATA: {
-            return {
-                name: action.value.name,
-                pwd: action.value.pwd
-            }
-        }
-        default: return store;
-    }
-};
 
-export const store = createStore(userReducer);
+export const store = createStore( combineReducers( {
+    userData: userReducer,
+    cartData: cartReducer
+}), composeWithDevTools() );
