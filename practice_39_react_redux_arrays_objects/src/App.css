@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.App {
+    padding: 10px;
+}
+
+.link {
+    padding: 10px;
+}
